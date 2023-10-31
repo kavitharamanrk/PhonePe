@@ -48,3 +48,6 @@ Geo-Visualization:The India map shows the state wise Total Transactions of Phone
 4 About : Gives the data of project technology and short notes of this phone pe project.
 
 Technolog used: Python, plotly, streamlit, pandas and mysql
+
+Linked in Url
+https://www.linkedin.com/posts/kavitha-raman-3287a2293_phone-pe-pulse-data-analysis-activity-7124992760574607362-N2sc/
