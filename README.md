@@ -10,12 +10,12 @@ workflow:
     Each has 2 folders transactions and user
 
     Data file tree
-        data\aggregated\transaction\country\india\state\district\year
-        data\aggregated\user\country\india\state\district\year
-        data\map\transaction\hover\country\india\state\district\year
-        data\map\user\hover\country\india\state\district\year
-        data\top\transaction\country\india\state\district\year
-        data\top\user\country\india\state\district\year
+        1.data\aggregated\transaction\country\india\state\district\year
+        2.data\aggregated\user\country\india\state\district\year
+        3.data\map\transaction\hover\country\india\state\district\year
+        4.data\map\user\hover\country\india\state\district\year
+        5.data\top\transaction\country\india\state\district\year
+        6.data\top\user\country\india\state\district\year
 
 3. Each year has json files for 4 quarters. 2023 has first 2 quarters data only.
     1. Jan - Mar
