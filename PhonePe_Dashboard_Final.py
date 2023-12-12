@@ -11,8 +11,8 @@ def mySqlConnection(query):
     mydb = mysql.connector.connect(
     host="localhost",
     user="root",
-    password="",
-    database="",
+    password="myData1",
+    database="PhonePe",
     )
     mycursor = mydb.cursor(buffered=True)
     mycursor.execute(query)
@@ -33,7 +33,7 @@ def phonepe_map():
 
     df_map=pd.DataFrame(hlis,columns=['state','Transactions','Amount','Average'])
     dfstate=df_map.copy()
-
+    df_map['state']=df['state'].copy()
     hover_data_cols_df = ['Transactions', 'Amount', 'Average']
     fig = px.choropleth(
             df_map,
@@ -108,7 +108,7 @@ with tab1:
     quarter=int(Quarter)
     if (year==2023 and (quarter==3 or quarter==4)):
         st.warning("This app contains the data from 1st quarter of 2018 to 2nd quarter of 2023 only")
-        pass 
+        exit()
 
     col5,col6 = st.columns([7,3])
     with col5:
@@ -119,6 +119,7 @@ with tab1:
         if qryselect=='Transactions':           
             st.subheader(":violet[Transactions]")
             st.caption(":violet[All PhonePe transactions(UPI+Cards+Wallets)]") 
+            tot_trans,tot_amnt,avg_amt=0,0,0
             tot_trans,tot_amnt,avg_amt=transaction_display()   
             st.write(round(tot_trans))
             
@@ -161,7 +162,7 @@ with tab1:
         elif qryselect=='Users':
             if (year==2023 and (quarter==3 or quarter==4)):
                 st.warning("This app contains the data from 1st quarter of 2018 to 2nd quarter of 2023 only")
-                pass
+                exit()
             
             user_qry=f"select sum(AppOpens), sum(Registered_User) from map_user  where Year= {year} and Quarter= {quarter}"
             
@@ -170,8 +171,8 @@ with tab1:
 
             reg_user,app_opens='',''
 
-            reg_user=lis1[0][0]
-            app_opens=lis1[0][1]
+            reg_user=user_lis[0][0]
+            app_opens=user_lis[0][1]
 
             st.subheader(":violet[Users]") 
 
