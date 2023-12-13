@@ -1,0 +1,9 @@
+CREATE DATABASE Phone_Pe;
+use Phone_Pe
+CREATE TABLE agg_transaction (State VARCHAR(100), Year INT, Quarter INT, Transaction_Type VARCHAR(100), 
+Count BIGINT, Amount DOUBLE);
+CREATE TABLE agg_user (State VARCHAR(100), Year INT, Quarter INT, Brand VARCHAR(100), Count BIGINT, Percentage FLOAT);
+CREATE TABLE map_transaction (State VARCHAR(100), Year INT, Quarter INT, District VARCHAR(100), Count BIGINT, Amount DOUBLE);
+CREATE TABLE map_user (State VARCHAR(100), Year INT, Quarter INT, District VARCHAR(100), Registered_User BIGINT, AppOpens DOUBLE);
+create table top_transaction (State varchar(100), Year int, Quarter int, Pincode int, Count bigint, Amount double);
+create table top_user (State varchar(100), Year int, Quarter int, Pincode int, Registered_User bigint);
